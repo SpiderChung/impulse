@@ -21,10 +21,15 @@ public class CharFrequencyController {
 
     @PostMapping("/charFrequency")
     public Map<String, List<CharFrequency>> getCharFrequency(@RequestBody InputRequest inputRequest) {
+        Map<String, List<CharFrequency>> response = new HashMap<>();
 
-        Map<String, List<CharFrequency>> responce = new HashMap<>();
+        if (inputRequest == null || inputRequest.getInput() == null) {
+            response.put("frequencies", null);
+            return response;
+        }
 
-        responce.put("frequencies", charFrequencyService.calculate(inputRequest.getInput()));
-        return responce;
+        response.put("frequencies", charFrequencyService.calculate(inputRequest.getInput()));
+        return response;
     }
 }
+
