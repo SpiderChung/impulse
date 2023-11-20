@@ -6,7 +6,6 @@ import ru.schung.impulsetest.model.CharFrequency;
 import ru.schung.impulsetest.service.CharFrequencyService;
 
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
